@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas></canvas> <!-- canvas API 창 -->
-    <input id="line-width" type="range" min="1" max="10" value="5" step="0.1" />
-    <!-- step : min과 max 사이의 조절 간격 설정 -->
     <div>
       <input type="color" id="color" />
       <div
@@ -74,13 +71,22 @@
         data-color="#e67e22"
       ></div>
     </div>
-    <button id="mode-btn">Fill</button>
-    <button id="destroy-btn">Destroy</button>
-    <button id="eraser-btn">Erase</button>
-    <input type="file" accept="image/*" id="file" />
-    <!-- accept = "image/*" 뜻 - 파일이 어떤 이든 이미지만 설정 가능 -->
-    <input type="text" id="text" />
-    <button id="save">Save image</button>
+    <canvas></canvas> <!-- canvas API 창 -->
+    <div class="btns">
+      <input id="line-width" type="range" min="1" max="10" value="5" step="0.1" />
+      <!-- step : min과 max 사이의 조절 간격 설정 -->
+      <button id="mode-btn">🎨 Fill</button>
+      <button id="destroy-btn">💣 Destroy</button>
+      <button id="eraser-btn">🖱 Erase</button>
+      <label for="file">
+        📷 Add Photo
+        <input type="file" accept="image/*" id="file"
+      /></label>
+      <!-- accept = "image/*" 뜻 - 파일이 어떤 이든 이미지만 설정 가능 -->
+      <!-- label의 for 값이랑 input의 id 값이 같으면 label을 클릭했을 때 input을 실행시킴 -->
+      <input type="text" id="text" placeholder="Add text here... :)" />
+      <button id="save">↓ Save image</button>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
